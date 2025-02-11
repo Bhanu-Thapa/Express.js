@@ -7,7 +7,6 @@ const router = express.Router()
 router.get('/',home)
 //Here, you’re passing a function reference (home), not calling it.
 //Internally, Express does something like this:
-
 // router.get('/', (req, res) => {
 //   home(req, res);  // Express calls home() and passes req, res
 // });

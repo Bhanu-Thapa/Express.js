@@ -9,7 +9,7 @@ const dbcon = async()=>{
   // catch(err){
   //   console.log(err)
   // }
-// ////////////
+  ////////////////////////////////////////////
 
 return mongoose.connect(process.env.MONGO_URI)
 .then((conn)=>{

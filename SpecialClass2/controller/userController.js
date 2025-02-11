@@ -1,3 +1,6 @@
+// contoller file is aslo known as main logic file of server
+// request(retrive) data from body and params(frontend) / DB collection interaction / respond(send) data to frontend
+
 const User = require('../model/userModel.js')
 
 
@@ -8,17 +11,13 @@ exports.home = (req,res)=>{
 
 exports.createuser = async(req,res)=>{
   try{
-    // extract info
+    // extract info / destructuring - 'body' get data form of object
     const {name,email} =req.body
 
     if(!name||!email){
       throw new Error('name and email are required')
     }
-
     // const userExist = User.findOne({email})
-
-
-
     // if(userExist){
     //   throw new Error('Email already exist')
     // }
@@ -82,11 +81,10 @@ exports.deleteuser = async(req,res)=>{
 
   }
 
-
 exports.updateuser = async (req,res)=>{
   try{
-
   const updatedata = await User.findByIdAndUpdate(req.params.id,req.body,{new:true})
+  // {new:true} return updated value / by default it'll return old value
   res.status(200).json({
     success:true,
     message:'User update',

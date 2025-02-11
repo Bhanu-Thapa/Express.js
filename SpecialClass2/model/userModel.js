@@ -15,3 +15,4 @@ const userSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('user',userSchema);
+// mongoose.model('user',userSchema); 'user' is a collection name (table name) - which show as a 'users' in DB
